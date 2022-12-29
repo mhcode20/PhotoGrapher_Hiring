@@ -1,0 +1,59 @@
+a,li{
+    list-style: none;
+    text-decoration:none !important;
+}
+.raihan{
+    
+    background-image: url("./image/fast\ bac.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.navbar-nav .nav-item{
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+    background-color: aqua;
+    margin: 5px;
+    border-radius: 8px;
+}
+.nav-item .nav-link , #hire {
+    
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+  }
+  #hire{
+    font-size: 44px;
+    background-color: rgb(49, 199, 219) !important;
+    border-radius: 8PX;
+  }
+.nav-item .nav-link:after , #hire:after{
+    background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: rgb(0, 0, 0);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+ .nav-item .nav-link:hover:after ,#hire:hover:after{
+   
+    width: 100%; 
+    left: 0; 
+}
+.babor1{
+    color: rgb(40, 10, 147);
+    background-color: rgba(9, 9, 236, 0.55);
+    border-radius: 7px;
+    border: none;
+    padding: 10px;
+}
+.babor1:hover{
+    background-color: rgba(239, 231, 219, 0.9);
+}
