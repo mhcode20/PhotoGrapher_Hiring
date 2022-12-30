@@ -13,6 +13,13 @@ else {
     
     $email =  $_POST['email'];
     $pass =  $_POST['pass'];
+    if(isset($_POST['rem'])){
+        $rem = 1;
+    }
+    else {
+        $rem = 0;
+    }
+    echo "<script>alert('$rem')</script>";
 
     if(user_signin($email,$pass))
     {
@@ -20,6 +27,7 @@ else {
         echo "<script> window.location = 'index.php';</script>";
     } else {
         echo "information did not match.";
+        echo '<a href="index.php">click here</a>to continue.';
     }
 
     

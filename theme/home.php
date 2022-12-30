@@ -24,10 +24,25 @@
                 <ul class="navbar-nav mx-auto">
                   
                   <li class="nav-item" id="opu">
-                    <a class="nav-link" href="./signin.php">Sign in</a>
+                  <?php
+if(isset($_SESSION['email'])){
+  echo '<a class="nav-link" href="photographers_list.php">Photo Graphers</a>';
+}
+else {
+                    echo '<a class="nav-link" href="./signin.php">Sign in</a>';
+}
+?>
+                   
                   </li>
                   <li class="nav-item" id="opu">
-                    <a class="nav-link" href="./signup_users.php">Create Account</a>
+                  <?php
+                  if(isset($_SESSION['email'])){
+                    echo '<a class="nav-link" href="#">Profile</a>';
+                  }
+                  else {
+                    echo '<a class="nav-link" href="./signup_users.php">Create Account</a>';
+                  }
+                  ?>
                   </li>
                   <li class="nav-item" id="opu">
                     <a class="nav-link" href="./signup_photographers.php">Become A Photographer</a>
@@ -37,8 +52,6 @@
 <?php
 if(isset($_SESSION['email'])){
   echo '<a class="nav-link"href="./db/logout.php">Log Out</a>';
-}
-else {
 }
 ?>
 
@@ -58,7 +71,7 @@ else {
                 echo 'photographers_list.php';
               }
               else {
-                echo 'signup_users.php';
+                echo 'signin.php';
               }
               ?>
               ">Hire A Photographer</a>

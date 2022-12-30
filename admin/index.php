@@ -1,3 +1,6 @@
+<?php
+include('../db/db.php');
+?>
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
@@ -58,6 +61,8 @@
         
       </ul>
   </div>
+  
+  
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
@@ -70,7 +75,7 @@
       </div>
       <div class="profile-details">
         <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name">Prem Shahi</span>
+        <span class="admin_name">Admin</span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
@@ -80,145 +85,133 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Order</div>
-            <div class="number">40,876</div>
+            <div class="number"><?php
+            $res = $db->query("SELECT * FROM `order`");
+            echo mysqli_num_rows($res);
+            ?></div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
             </div>
           </div>
           <i class='bx bx-cart-alt cart'></i>
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Total Sales</div>
-            <div class="number">38,876</div>
+            <div class="box-topic">Total Customer</div>
+            <div class="number"><?php
+            $res = $db->query("SELECT * FROM `users`");
+            $up = mysqli_num_rows($res);
+            echo mysqli_num_rows($res);
+            ?></div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
             </div>
           </div>
           <i class='bx bxs-cart-add cart two' ></i>
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Total Profit</div>
-            <div class="number">$12,876</div>
+            <div class="box-topic">Photo Grapher</div>
+            <div class="number"><?php
+            $res = $db->query("SELECT * FROM `photographers`");
+            $up += mysqli_num_rows($res);
+            echo mysqli_num_rows($res);
+            ?></div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
             </div>
           </div>
           <i class='bx bx-cart cart three' ></i>
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Total Return</div>
-            <div class="number">11,086</div>
+            <div class="box-topic">Total User</div>
+            <div class="number"><?php echo $up;?></div>
             <div class="indicator">
               <i class='bx bx-down-arrow-alt down'></i>
-              <span class="text">Down From Today</span>
             </div>
           </div>
           <i class='bx bxs-cart-download cart four' ></i>
         </div>
       </div>
 
-      <div class="sales-boxes">
+
+      
+      
+      
+      <!--
+        <div class="sales-boxes">
+        
         <div class="recent-sales box">
-          <div class="title">Recent Sales</div>
+      <div class="title">Recent Sales</div>
           <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">PhotoGrapher</th>
+                <th scope="col">User</th>
+                <th scope="col">Status</th>
               </tr>
             </thead>
             <tbody>
+              <?php
+              $res = $db->query("SELECT * FROM `order` order by id DESC;");
+              $i=1;
+              while($row = $res->fetch_assoc())
+              {
+              ?>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"><?php echo $i; ?></th>
+                <td><?php echo $row['photographer']; ?></td>
+                <td><?php echo $row['user']; ?></td>
+                <td class="<?php
+                if($row['status']=='paid')
+                {
+                  echo 'bg-success';
+                }
+                else {
+                  echo 'bg-danger';
+                }
+                ?>"><?php echo $row['status']; ?></td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              <?php $i=$i+1;} ?>
+              
             </tbody>
           </table>
-          
+
         </div>
+          
+        
         <div class="top-sales box">
-          <div class="title">Top Seling Product</div>
+          <div class="title">Photo Graphers</div>
           <ul class="top-sales-details">
             <li>
             <a href="#">
-              <!--<img src="images/sunglasses.jpg" alt="">-->
+              
               <span class="product font-weight-bold ">Name</span>
             </a>
             <span class="price font-weight-bold">Orders</span>
           </li>
+          <?php
+            $res = $db->query("select * from `photographers`");
+            while ($row = $res->fetch_assoc()) {
+              ?>
           <li>
+            
             <a href="#">
-               <!--<img src="images/jeans.jpg" alt="">-->
-              <span class="product">Hourglass Jeans </span>
+               
+              <span class="product"><?php echo $row['name'];?></span>
             </a>
-            <span class="price">$1567</span>
+            <span class="price"><?php
+            $temp = $db->query("select * from `order` where photographer='" . $row['email'] . "'");
+            echo mysqli_num_rows($temp);
+            ?></span>
           </li>
-          <li>
-            <a href="#">
-             <!-- <img src="images/nike.jpg" alt="">-->
-              <span class="product">Nike Sport Shoe</span>
-            </a>
-            <span class="price">$1234</span>
-          </li>
-          <li>
-            <a href="#">
-              <!--<img src="images/scarves.jpg" alt="">-->
-              <span class="product">Hermes Silk Scarves.</span>
-            </a>
-            <span class="price">$2312</span>
-          </li>
-          <li>
-            <a href="#">
-              <!--<img src="images/blueBag.jpg" alt="">-->
-              <span class="product">Succi Ladies Bag</span>
-            </a>
-            <span class="price">$1456</span>
-          </li>
-          <li>
-            <a href="#">
-              <!--<img src="images/bag.jpg" alt="">-->
-              <span class="product">Gucci Womens's Bags</span>
-            </a>
-            <span class="price">$2345</span>
-          <li>
-            <a href="#">
-              <!--<img src="images/addidas.jpg" alt="">-->
-              <span class="product">Addidas Running Shoe</span>
-            </a>
-            <span class="price">$2345</span>
-          </li>
-<li>
-            <a href="#">
-             <!--<img src="images/shirt.jpg" alt="">-->
-              <span class="product">Bilack Wear's Shirt</span>
-            </a>
-            <span class="price">$1245</span>
-          </li>
+          <?php } ?>
           </ul>
         </div>
-      </div>
+      </div>-->
+          <?php include('comps/msgcomps.php');?>
     </div>
   </section>
 

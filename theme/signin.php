@@ -24,7 +24,7 @@
       </div>
       <div class="content">
         <div class="checkbox">
-            <input type="checkbox" id="remember-me">
+            <input type="checkbox" id="remember-me" name="rem">
           <label for="remember-me">Remember me</label>
         </div>
         <div class="pass-link"><a href="#">Forgot password?</a></div>
@@ -32,7 +32,7 @@
       <div class="field">
         <input type="submit" value="Login" name="login">
       </div>
-      <div class="signup-link">Not a member? <a href="#">Signin now</a></div>
+      <div class="signup-link">Not a member? <a href="signup_users.php">SignUp now</a></div>
     </form>
   </div>
 </body>
