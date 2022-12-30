@@ -5,7 +5,7 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title"><?php echo $row['name']; ?></h5>
+              <h5 class="card-title"><a href="pg_profile.php?email=<?php echo $row['email']?>"><?php echo $row['name']; ?></a></h5>
               <p class="card-text">Address:<?php echo $row['address']; ?></p>
               <p>Phone Number:<?php echo $row['phone']; ?></p>
               <p>Email:<?php echo $row['email']; ?></p>

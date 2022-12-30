@@ -37,7 +37,7 @@ else {
                   <li class="nav-item" id="opu">
                   <?php
                   if(isset($_SESSION['email'])){
-                    echo '<a class="nav-link" href="#">Profile</a>';
+                    echo '<a class="nav-link" href="u_profile.php">Profile</a>';
                   }
                   else {
                     echo '<a class="nav-link" href="./signup_users.php">Create Account</a>';

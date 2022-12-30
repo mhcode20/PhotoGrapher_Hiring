@@ -28,11 +28,9 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="upload/<?php echo $row['img'];?>" alt="avatar"
-              class="rounded-circle img-fluid" style="width: 150px;">
+            
             <h5 class="my-3"><?php echo $row['name'];?></h5>
-            <p class="text-muted mb-1"><?php echo $row['type'];?></p>
-            <p class="text-muted mb-4"><?php echo $row['address'];?></p>
+            <p class="text-muted mb-1"><?php echo $row['email'];?></p>
             
           </div>
         </div>
@@ -94,15 +92,7 @@
             </div>
             
             
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php echo $row['address'];?></p>
-              </div>
-            </div>
+            
           </div>
         </div>
         <div class="row">
