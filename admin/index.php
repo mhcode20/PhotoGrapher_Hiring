@@ -1,5 +1,9 @@
 <?php
 include('../db/db.php');
+session_start();
+if(!isset($_SESSION['admin'])){
+  header('location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
@@ -211,7 +215,7 @@ include('../db/db.php');
           </ul>
         </div>
       </div>-->
-          <?php include('comps/msgcomps.php');?>
+          <?php include('comps/salecomps.php');?>
     </div>
   </section>
 

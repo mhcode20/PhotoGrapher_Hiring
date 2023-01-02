@@ -1,5 +1,5 @@
 <?php
-include('db/db.php');
+include_once('db/db.php');
 
 
 function photographer_signup($name,$email,$address,$phone,$type,$pass,$img,$price)
@@ -43,6 +43,18 @@ function user_signup($name,$email,$phone,$pass)
 function user_signin($email,$pass){
     global $db;
     $res = $db->query("select * from users where email='$email' and pass='$pass'");
+    if(mysqli_num_rows($res)>0)
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function admin_signin($email,$pass){
+    global $db;
+    $res = $db->query("select * from admin where email='$email' and pass='$pass'");
     if(mysqli_num_rows($res)>0)
     {
         return true;
