@@ -106,6 +106,24 @@
           </div>
         </div>
         <div class="row">
+          <div class="container">
+            <div class="row">
+              <?php 
+                $e = $row['email'];
+                $dres = $db->query("SELECT * FROM `demoimg` WHERE pg='$e'");
+                while($imgl = $dres->fetch_assoc())
+                {
+              ?>
+              <div class="col-sm-4">
+                <a href="#" >
+                  <img src="upload/<?php echo $imgl['img']; ?>" class="img-thumbnail">
+                </a>
+              </div>
+              <?php } ?>
+              
+              
+            </div>
+          </div>
 
 
 

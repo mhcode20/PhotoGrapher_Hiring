@@ -24,7 +24,7 @@ if(!isset($_SESSION['admin'])){
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">CodingLab</span>
+      <span class="logo_name">PhotoKing</span>
     </div>
       <ul class="nav-links">
         <li>
@@ -42,7 +42,7 @@ if(!isset($_SESSION['admin'])){
         <li>
           <a href="#">
             <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Order list</span>
+            <span class="links_name">Add User</span>
           </a>
         </li>
         

@@ -33,6 +33,8 @@
         <input type="submit" value="Login" name="login">
       </div>
       <div class="signup-link">Not a member? <a href="signup_users.php">SignUp now</a></div>
+      <div class="signup-link">Are you a Photographer? <a href="signIn_pg.php">SignIn Here</a></div>
+      
     </form>
   </div>
 </body>

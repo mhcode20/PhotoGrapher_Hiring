@@ -131,9 +131,21 @@
     
           <br />
     
-    <p>Profile: <input type="file" name="profile" /></p>
+          <p>Profile: <input type="file" name="profile" required/></p>
+    
+    <br />
+    <p>Demo Images:<br> <input type="file" name="demo1" required/><br>  <input type="file" name="demo2" required/><br>  <input type="file" name="demo3" required/></p>
     
           <br />
+
+          <p>Video Resume(Link): <input type="text" size="65" name="vrl" /></p>
+    
+          <br />
+          <p>Upload CV(Link): <input type="text" size="65" name="cv" /></p>
+    
+          <br />
+          
+
     <p>
             Photographer Type:
             <select name="photographer-type" id="photographer-type">

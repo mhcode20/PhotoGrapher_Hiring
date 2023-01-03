@@ -17,7 +17,7 @@ else {
     $phone =  $_POST['Telephone'];
     $type =  $_POST['photographer-type'];
 
-
+/*
     $bytes = random_bytes(16);
     $random_string = bin2hex($bytes);
 
@@ -29,9 +29,14 @@ else {
     if(move_uploaded_file($temp_name, $location.$img)){
         echo 'File uploaded successfully<br>';
     }
+*/
 
-    photographer_signup($name, $email, $address, $phone, $type, $pass, $img,$price);
+    
+    photographer_signup($name, $email, $address, $phone, $type, $pass, imageUp($_FILES['profile']),$price);
     echo '<a href="index.php">click here</a>to continue.';
+    demoImgUp($_FILES['demo1'],$email);
+    demoImgUp($_FILES['demo2'],$email);
+    demoImgUp($_FILES['demo3'],$email);
     
 }
 ?>

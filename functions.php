@@ -20,6 +20,29 @@ function photographer_signup($name,$email,$address,$phone,$type,$pass,$img,$pric
 }
 
 
+function imageUp($file)
+{
+    $bytes = random_bytes(16);
+    $random_string = bin2hex($bytes);
+
+    $img = $random_string.$file['name'];
+    $temp_name = $file['tmp_name'];
+
+    $location = 'upload/';
+
+    if(move_uploaded_file($temp_name, $location.$img)){
+        echo 'File uploaded successfully<br>';
+    }
+    return $img;
+}
+
+function demoImgUp($file,$pg)
+{
+    $fname = imageUp($file);
+    global $db;
+    $db->query("INSERT INTO `demoimg`(`id`, `pg`, `img`) VALUES (null,'$pg','$fname')");
+    echo "demo image Added <br>";
+}
 
 function user_signup($name,$email,$phone,$pass)
 {
@@ -66,4 +89,15 @@ function admin_signin($email,$pass){
 
 
 
+function pg_signin($email,$pass){
+    global $db;
+    $res = $db->query("select * from photographers where email='$email' and pass='$pass'");
+    if(mysqli_num_rows($res)>0)
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 ?>
