@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2023 at 04:27 PM
+-- Generation Time: Jan 04, 2023 at 07:30 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -112,7 +112,7 @@ INSERT INTO `photographers` (`id`, `name`, `email`, `address`, `phone`, `type`, 
 (15, 'MH Hridoy', 'mhcode20@gmail.com', 'Hapunia, sherpur, bogra', '+8801710826032', 'Wedding Photographer', '45643564', '7f3a7ab3eebf252607454be4c54cd3d2gg.jpg', 2000, '', ''),
 (16, 'Ok Test', 'sdkjflskd@dlkjf.com', 'adasd, aslf, lksdfjslsdlfk', '01010101010', 'journalistic Photographer', '11223456', '4a145947fcfadb757f2cff7138b2ab10cota.png', 2500, '', ''),
 (17, 'MH Hridoy', 'test@test.com', 'Hapunia, sherpur, bogra', '+8801710826032', 'artistic Photographer', '123456', '5840b89aa2cb45520d17a49cf3d66240michael-pointner-9B0r-IHVTfg-unsplash.jpg', 12121, '', ''),
-(18, 'MH Hridoy', 'mhcdfdode20@gmail.com', 'Hapunia, sherpur, bogra', '+8801710826032', 'Wedding Photographer', '123456', 'dc0c8805d8ca177b2e7b4634798cd58frr.jpg', 2000, '', '');
+(18, 'MH Hridoy', 'mhcdfdode20@gmail.com', 'Hapunia, sherpur, bogra', '+8801710826032', 'Wedding Photographer', '123456', 'dc0c8805d8ca177b2e7b4634798cd58frr.jpg', 2000, 'https://www.youtube.com/embed/v6CC6c7YqCQ', 'testvc');
 
 -- --------------------------------------------------------
 
