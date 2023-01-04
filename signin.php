@@ -2,7 +2,7 @@
 include('db/sessions.php');
 include('db/db.php');
 include('functions.php');
-if(isset($_SESSION['email']))
+if(isset($_SESSION['email']) || isset($_SESSION['pg']))
 {
     echo "<script> window.location = 'index.php';</script>";
 }
@@ -19,7 +19,6 @@ else {
     else {
         $rem = 0;
     }
-    echo "<script>alert('$rem')</script>";
 
     if(user_signin($email,$pass))
     {

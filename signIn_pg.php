@@ -2,12 +2,12 @@
 include('db/sessions.php');
 include('db/db.php');
 include('functions.php');
-if(isset($_SESSION['email']))
+if(isset($_SESSION['email']) || isset($_SESSION['pg']))
 {
     echo "<script> window.location = 'index.php';</script>";
 }
-if (!isset($_POST['login'])) {
-    include('theme/signin.php');
+if (!isset($_POST['submit'])) {
+    include('theme/pg_login.php');
 }
 else {
     
@@ -19,11 +19,10 @@ else {
     else {
         $rem = 0;
     }
-    echo "<script>alert('$rem')</script>";
 
-    if(user_signin($email,$pass))
+    if(pg_signin($email,$pass))
     {
-        $_SESSION['email'] = $email;
+        $_SESSION['pg'] = $email;
         echo "<script> window.location = 'index.php';</script>";
     } else {
         echo "information did not match.";

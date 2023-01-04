@@ -25,7 +25,7 @@
                   
                   <li class="nav-item" id="opu">
                   <?php
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['email']) || isset($_SESSION['pg'])){
   echo '<a class="nav-link" href="photographers_list.php">Photo Graphers</a>';
 }
 else {
@@ -36,7 +36,7 @@ else {
                   </li>
                   <li class="nav-item" id="opu">
                   <?php
-                  if(isset($_SESSION['email'])){
+                  if(isset($_SESSION['email']) || isset($_SESSION['pg'])){
                     echo '<a class="nav-link" href="u_profile.php">Profile</a>';
                   }
                   else {
@@ -45,12 +45,20 @@ else {
                   ?>
                   </li>
                   <li class="nav-item" id="opu">
-                    <a class="nav-link" href="./signup_photographers.php">Become A Photographer</a>
+                    <?php 
+                    if(isset($_SESSION['email']) || isset($_SESSION['pg'])){
+                     
+                    }
+                    else {
+                      echo '<a class="nav-link" href="./signup_photographers.php">Become A Photographer</a>';
+                    }
+                    ?>
+                    
                   </li>
                   
                   <li class="nav-item"id="opu">
 <?php
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['email']) || isset($_SESSION['pg'])){
   echo '<a class="nav-link"href="./db/logout.php">Log Out</a>';
 }
 ?>

@@ -40,25 +40,14 @@
           <div class="card-body p-0">
             <ul class="list-group list-group-flush rounded-3">
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fas fa-globe fa-lg text-warning"></i>
-                <p class="mb-0">https://mdbootstrap.com</p>
+                <b class="text-warning">CV</b>
+                <p class="mb-0"><?php echo $row['cv'];?></p>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                <p class="mb-0">mdbootstrap</p>
+                <iframe width="560" height="315" src="<?php echo $row['vr'];?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                <p class="mb-0">@mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                <p class="mb-0">mdbootstrap</p>
-              </li>
+              
             </ul>
           </div>
         </div>

@@ -6,9 +6,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="theme/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="theme/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="theme/assets/css/style.css" rel="stylesheet">
 
     <title>Bootstrap 5  Login Page Design</title>
   </head>
@@ -18,10 +18,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
+            <form method="post">
             <div class="form-sub-main">
               <div class="_main_head_as">
                 <a href="#">
-                  <img src="assets/images/vector.png">
+                  <img src="theme/assets/images/vector.png">
                 </a>
               </div>
               <div class="form-group">
@@ -29,7 +30,7 @@
               </div>
 
               <div class="form-group">                                              
-                <input id="password" type="password" class="form-control" name="password" placeholder="********" required="required">
+                <input id="password" type="password" class="form-control" name="pass" placeholder="********" required="required">
                 <i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
               </div>
 
@@ -41,10 +42,11 @@
 
               <div class="form-group">
                 <div class="btn_uy">
-                  <a href="#"><span>Login</span></a>
+                <a href="#"><span><button type="submit" name="submit" style="background:none;border:none;color:#fff;">Login</button></span></a>
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>
