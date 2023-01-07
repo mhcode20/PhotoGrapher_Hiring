@@ -16,6 +16,9 @@ else {
     $pass =  $_POST['Password'];
     $phone =  $_POST['Telephone'];
     $type =  $_POST['photographer-type'];
+    $cv = $_POST['cv'];
+    $vr = $_POST['vr'];
+    
 
 /*
     $bytes = random_bytes(16);
@@ -32,7 +35,7 @@ else {
 */
 
     
-    photographer_signup($name, $email, $address, $phone, $type, $pass, imageUp($_FILES['profile']),$price);
+    photographer_signup($name, $email, $address, $phone, $type, $pass, imageUp($_FILES['profile']),$price,$cv,$vr);
     echo '<a href="index.php">click here</a>to continue.';
     demoImgUp($_FILES['demo1'],$email);
     demoImgUp($_FILES['demo2'],$email);

@@ -41,7 +41,7 @@
             <ul class="list-group list-group-flush rounded-3">
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <b class="text-warning">CV</b>
-                <p class="mb-0"><?php echo $row['cv'];?></p>
+                <p class="mb-0"><a href="<?php echo $row['cv'];?>">Download</a></p>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-github fa-lg" style="color: #333333;"></i>

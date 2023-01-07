@@ -138,7 +138,7 @@
     
           <br />
 
-          <p>Video Resume(Link): <input type="text" size="65" name="vrl" /></p>
+          <p>Video Resume(Link): <input type="text" size="65" name="vr" /></p>
     
           <br />
           <p>Upload CV(Link): <input type="text" size="65" name="cv" /></p>

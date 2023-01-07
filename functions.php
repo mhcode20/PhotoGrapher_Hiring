@@ -2,10 +2,10 @@
 include_once('db/db.php');
 
 
-function photographer_signup($name,$email,$address,$phone,$type,$pass,$img,$price)
+function photographer_signup($name,$email,$address,$phone,$type,$pass,$img,$price,$cv,$vr)
 {
     global $db;
-    $sql = "INSERT INTO `photographers`(`id`, `name`, `email`, `address`, `phone`, `type`, `pass`,`img`,`price`) VALUES (null,'$name','$email','$address','$phone','$type','$pass','$img','$price')";
+    $sql = "INSERT INTO `photographers`(`id`, `name`, `email`, `address`, `phone`, `type`, `pass`,`img`,`price`,`vr`,`cv`) VALUES (null,'$name','$email','$address','$phone','$type','$pass','$img','$price','$vr','$cv')";
     $e_c = $db->query("select * from photographers where email='$email'");
     if(mysqli_num_rows($e_c)>0){
         echo 'email already exists.';
