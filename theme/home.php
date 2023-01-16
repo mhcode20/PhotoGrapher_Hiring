@@ -36,8 +36,11 @@ else {
                   </li>
                   <li class="nav-item" id="opu">
                   <?php
-                  if(isset($_SESSION['email']) || isset($_SESSION['pg'])){
+                  if(isset($_SESSION['email'])){
                     echo '<a class="nav-link" href="u_profile.php">Profile</a>';
+                  }
+                  else if(isset($_SESSION['pg'])){
+                    echo '<a class="nav-link" href="pg_profile.php?email='.$_SESSION['pg'].'">Profile</a>';
                   }
                   else {
                     echo '<a class="nav-link" href="./signup_users.php">Create Account</a>';

@@ -91,7 +91,7 @@ function admin_signin($email,$pass){
 
 function pg_signin($email,$pass){
     global $db;
-    $res = $db->query("select * from photographers where email='$email' and pass='$pass'");
+    $res = $db->query("SELECT * FROM `photographers` WHERE email='$email' and pass='$pass'");
     if(mysqli_num_rows($res)>0)
     {
         return true;
