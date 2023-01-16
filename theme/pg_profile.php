@@ -31,7 +31,16 @@
             <img src="upload/<?php echo $row['img'];?>" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3"><?php echo $row['name'];?></h5>
+            <p class="text-muted mb-1">
+              <?php $inum = round($rating['avg']);
+              $i = 0;
+              while($i<$inum){
+              ?>
+              <img src="theme/image/star.svg" class="" style="width: 30px;" alt="" srcset="">
+              <?php $i++; } ?>
+            </p>
             <p class="text-muted mb-1"><?php echo $row['type'];?></p>
+            
             <p class="text-muted mb-4"><?php echo $row['address'];?></p>
             
           </div>
@@ -112,8 +121,28 @@
               
               
             </div>
-          </div>
+            <?php
+            if (!isset($_SESSION['pg'])) {
 
+
+              ?>
+            <div class="row mt-4">
+              <div class="m-4">
+                <form action="#" method="get">
+                  <label>Rate this photographer acording to his performance:</label><br>
+                  <input type="radio" name="rate" value="1"><label for="">&nbsp; Very Bad</label><br>
+                  <input type="radio" name="rate" value="2"><label for="">&nbsp; Bad</label><br>
+                  <input type="radio" name="rate" value="3"><label for="">&nbsp; Good</label><br>
+                  <input type="radio" name="rate" value="4"><label for="">&nbsp; Very Good</label><br>
+                  <input type="radio" name="rate" value="5"><label for="">&nbsp; Awesome</label><br>
+                  <input type="hidden" name="email" value="<?php echo $_GET['email'];?>">
+                  <input type="submit" style="margin-left: 100px;" value="Submit" name="submit"/>
+                </form>
+              </div>
+            </div>
+            <?php } ?>
+          </div>
+            
 
 
         </div>
