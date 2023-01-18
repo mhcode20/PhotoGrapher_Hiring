@@ -37,7 +37,8 @@
               while($i<$inum){
               ?>
               <img src="theme/image/star.svg" class="" style="width: 30px;" alt="" srcset="">
-              <?php $i++; } ?>
+              <?php $i++; }
+              echo "(" . $rate_num . ")"; ?>
             </p>
             <p class="text-muted mb-1"><?php echo $row['type'];?></p>
             

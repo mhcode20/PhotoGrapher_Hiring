@@ -6,6 +6,8 @@ include('functions.php');
 $email = $_GET['email'];
 $res = $db->query("select * from `photographers` where email='$email'");
 $rate_res = $db->query("select AVG(rating) as avg from `ratings` where pg_email='$email'");
+$rn = $db->query("select * from `ratings` where pg_email='$email'");
+$rate_num = mysqli_num_rows($rn);
 $rating = $rate_res->fetch_assoc();
 $row = $res->fetch_assoc();
 
